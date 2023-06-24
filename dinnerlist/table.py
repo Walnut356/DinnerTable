@@ -41,6 +41,9 @@ class DinnerTable:
         self.db.execute("DROP TABLE dinners")
         self._create_table()
 
+    def get_all(self) -> sqlite3.Cursor:
+        return self.db.execute("SELECT * FROM dinners")
+
     def add_dinner(self, name: str, ingredients: list[str] | None = None):
         if ingredients and len(ingredients) >= 3:
             ingredients = str(ingredients)[1:-2].replace("'", "")
