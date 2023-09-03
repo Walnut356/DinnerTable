@@ -1,18 +1,23 @@
-from dinnerlist.table import DinnerTable, Column
+val = [1, 2, 3, 4, 5]
+thing = str(val)
+thing2 = list([int(x) for x in thing if x != ',' and x != '[' and x != "]" and x != ' '])
 
-db = DinnerTable()
-# db._reset_table()
-# db.add_dinner("stir fry")
-# db.add_dinner("spaghetti", ["pasta", "red sauce", "ground beef"])
-db.remove_dinner("burgers")
-db.add_dinner("burger", ["ground beef", "buns", "onion", "ketchup", "fries"])
-
-db.edit("stir fry", Column.TIMES_EATEN, 1)
-
-thing = db.filter_by(Column.NAME, "s")
-
-for row in thing:
-    print(row)
+print(thing)
+print(thing2)
 
 
-pass
+# from dinnertable.table import DinnerTable, Column
+
+# db = DinnerTable()
+# # db._reset_table()
+# # db.add_dinner("stir fry")
+# # db.add_dinner("spaghetti", ["pasta", "red sauce", "ground beef"])
+# db.remove_dinner("burgers")
+
+# thing = db.filter_by(Column.NAME, "s")
+
+# for row in thing:
+#     print(row)
+
+
+# pass

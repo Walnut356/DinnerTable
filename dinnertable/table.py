@@ -89,5 +89,5 @@ class DinnerTable:
         )
 
     def edit(self, name: str, column: Column, new_value: str | int):
-        self.db.execute(f"UPDATE dinners SET {column} = ? WHERE name IS ?", (new_value, name))
+        self.db.execute("UPDATE dinners SET ? = ? WHERE name IS ?", (column, new_value, name))
         self.db.commit()
