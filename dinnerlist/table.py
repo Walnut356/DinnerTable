@@ -1,22 +1,15 @@
 import sqlite3
 import json
-from enum import Enum  # TODO in 3.11 i can just use strenum
+from enum import StrEnum
 
 
 # these column names are going to change so it'll save me a bunch of time and typos later
-class Column(Enum):
+class Column(StrEnum):
     NAME = "name"
     INGREDIENTS = "ingredients"
     TIMES_EATEN = "times_eaten"
     IN_CURRENT_LIST = "in_current_list"
     LAST_EATEN = "last_eaten"
-
-    def __str__(self):
-        return self.value
-
-    def __repr__(self):
-        return self.value
-
 
 # could have been a global var since the scope is so small but the pun was too good to pass up
 class DinnerTable:
